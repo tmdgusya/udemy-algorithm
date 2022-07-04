@@ -67,6 +67,11 @@ public class HashTable<T> {
         return moduloOperation(getHash(data));
     }
 
+    /**
+     * 사실 이렇게 하는게 별로긴 한데, 어차피 알고 있는게 중요한거니깐..
+     * @param hash hash 값
+     * @return mod 연산이 적용된 값.
+     */
     private int moduloOperation(int hash) {
         if (hash < 0) {
             hash *= -1;
