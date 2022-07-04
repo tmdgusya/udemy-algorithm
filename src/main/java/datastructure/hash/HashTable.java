@@ -40,19 +40,23 @@ public class HashTable<T> {
 
     public void setData(T data) {
         final int key = getIndex(data);
-        Node<T> value = arrays.get(key);
+        Node<T> preNode = arrays.get(key);
 
         System.out.println("Key : " + key);
 
         /*
          * hashCollision
          */
-        if (value != null) {
-            value.connect(new Node<>(data));
+        if (isCollision(preNode)) {
+            preNode.connect(new Node<>(data));
             return;
         }
 
         arrays.set(key, new Node<>(data));
+    }
+
+    private boolean isCollision(Node<T> value) {
+        return value != null;
     }
 
     public int getSize() {
