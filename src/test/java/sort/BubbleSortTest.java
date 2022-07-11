@@ -11,6 +11,7 @@ class BubbleSortTest {
     @Test
     void testBubbleSort() {
         int[] result = bubbleSort.bubbleSort(new int[]{8, 4, 3, 6, 7, 9, 0, 1});
+
         Assertions.assertArrayEquals(new int[]{0, 1, 3, 4, 6, 7, 8, 9}, result);
     }
 }
