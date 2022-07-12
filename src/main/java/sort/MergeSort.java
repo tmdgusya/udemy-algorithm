@@ -15,12 +15,16 @@ public class MergeSort {
     private void divide(int[] nums, int left, int right) {
         tempArray = new int[nums.length];
 
-        if (left < right) {
+        if (isCompletedSort(left, right)) {
             int middle = (left + right) / 2;
             divide(nums, left, middle);
             divide(nums, middle + 1, right);
             combine(nums, left, middle, right);
         }
+    }
+
+    private boolean isCompletedSort(int left, int right) {
+        return left < right;
     }
 
 
