@@ -15,7 +15,7 @@ public class FNVHash {
     public long hash(char[] str, int length) {
         long hash = FNV_OFFSET_32;
         for (int i = 0; i < length; ++i) {
-            hash = hash * FNV_OFFSET_32;
+            hash = hash * FNV_PRIME_32;
             hash = hash ^ str[i];
         }
         return hash;
@@ -27,7 +27,7 @@ public class FNVHash {
     public long hash_a(char[] str, int length) {
         long hash = FNV_OFFSET_32;
         for (int i = 0; i < length; ++i) {
-            hash = hash * FNV_OFFSET_32;
+            hash = hash * FNV_PRIME_32;
             hash = hash ^ str[i];
         }
         return hash;
